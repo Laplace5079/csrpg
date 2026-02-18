@@ -1,0 +1,191 @@
+{
+  "enemies": [
+    {
+      "id": "grunt_robot",
+      "name": "巡逻机器人",
+      "type": "grunt",
+      "health": 30,
+      "armor": 0,
+      "damage": 8,
+      "speed": 2.5,
+      "perception": {
+        "viewDistance": 15,
+        "viewAngle": 90,
+        "hearingRange": 10
+      },
+      "behavior": {
+        "type": "charge",
+        "attackRange": 5
+      },
+      "loot": {
+        "experience": 10,
+        "dropChance": 0.3
+      }
+    },
+    {
+      "id": "soldier_tactical",
+      "name": "战术士兵",
+      "type": "soldier",
+      "health": 80,
+      "armor": 20,
+      "damage": 15,
+      "speed": 3.0,
+      "perception": {
+        "viewDistance": 25,
+        "viewAngle": 100,
+        "hearingRange": 20
+      },
+      "behavior": {
+        "type": "tactical",
+        "useCover": true,
+        "attackRange": 15,
+        "canGrenade": true
+      },
+      "loot": {
+        "experience": 25,
+        "dropChance": 0.5
+      }
+    },
+    {
+      "id": "elite_phantom",
+      "name": "幻影精英",
+      "type": "elite",
+      "health": 150,
+      "armor": 40,
+      "damage": 25,
+      "speed": 4.5,
+      "perception": {
+        "viewDistance": 35,
+        "viewAngle": 120,
+        "hearingRange": 30
+      },
+      "behavior": {
+        "type": "stealth",
+        "canTeleport": true,
+        "attackRange": 20
+      },
+      "loot": {
+        "experience": 50,
+        "dropChance": 0.7,
+        "rareItem": true
+      }
+    },
+    {
+      "id": "boss_mech_arm",
+      "name": "巨型机械臂",
+      "type": "boss",
+      "health": 500,
+      "armor": 100,
+      "damage": 40,
+      "speed": 1.0,
+      "perception": {
+        "viewDistance": 50,
+        "viewAngle": 180,
+        "hearingRange": 40
+      },
+      "behavior": {
+        "type": "boss",
+        "phases": [
+          {
+            "name": "抓取模式",
+            "healthPercent": 1.0,
+            "mechanics": ["grab", "swing"]
+          },
+          {
+            "name": "激光扫射",
+            "healthPercent": 0.6,
+            "mechanics": ["laser_beam", "sweep"]
+          },
+          {
+            "name": "锤击",
+            "healthPercent": 0.3,
+            "mechanics": ["smash", "shockwave"]
+          }
+        ]
+      },
+      "loot": {
+        "experience": 200,
+        "dropChance": 1.0,
+        "legendaryItem": true
+      }
+    },
+    {
+      "id": "boss_ghost_assassin",
+      "name": "幽灵刺客",
+      "type": "boss",
+      "health": 400,
+      "armor": 50,
+      "damage": 35,
+      "speed": 6.0,
+      "perception": {
+        "viewDistance": 60,
+        "viewAngle": 360,
+        "hearingRange": 50
+      },
+      "behavior": {
+        "type": "boss",
+        "phases": [
+          {
+            "name": "隐形",
+            "healthPercent": 1.0,
+            "mechanics": ["invisible", "backstab"]
+          },
+          {
+            "name": "瞬移",
+            "healthPercent": 0.6,
+            "mechanics": ["teleport", "combo"]
+          },
+          {
+            "name": "分身",
+            "healthPercent": 0.3,
+            "mechanics": ["clone", "chaos"]
+          }
+        ]
+      },
+      "loot": {
+        "experience": 250,
+        "dropChance": 1.0,
+        "legendaryItem": true
+      }
+    },
+    {
+      "id": "boss_void_eater",
+      "name": "虚空吞噬者",
+      "type": "boss",
+      "health": 800,
+      "armor": 100,
+      "damage": 50,
+      "speed": 3.0,
+      "perception": {
+        "viewDistance": 80,
+        "viewAngle": 360,
+        "hearingRange": 60
+      },
+      "behavior": {
+        "type": "boss",
+        "phases": [
+          {
+            "name": "虚影形态",
+            "healthPercent": 1.0,
+            "mechanics": ["teleport", "void_orb"]
+          },
+          {
+            "name": "实体形态",
+            "healthPercent": 0.6,
+            "mechanics": ["dash", "area_slow", "summon"]
+          },
+          {
+            "name": "狂暴形态",
+            "healthPercent": 0.3,
+            "mechanics": ["beam_attack", "chaos_teleport", "enrage"]
+          }
+        ]
+      },
+      "loot": {
+        "experience": 500,
+        "dropChance": 1.0,
+        "legendaryItem": true
+      }
+    }
+  ]
+}

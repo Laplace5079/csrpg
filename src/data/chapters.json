@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "gameTitle": "墨境：孤军",
+    "totalChapters": 5,
+    "version": "1.0.0"
+  },
+  "chapters": [
+    {
+      "id": "chapter_0",
+      "name": "新兵训练",
+      "description": "在量子训练基地完成你的第一次战斗训练",
+      "level": "level_0",
+      "estimatedTime": 15,
+      "difficulty": "easy",
+      "unlockCondition": null
+    },
+    {
+      "id": "chapter_1",
+      "name": "机械觉醒",
+      "description": "前哨基地遭到入侵，你需要穿越防线",
+      "level": "level_1",
+      "estimatedTime": 50,
+      "difficulty": "easy",
+      "unlockCondition": "chapter_0_complete"
+    },
+    {
+      "id": "chapter_2",
+      "name": "灰色地带",
+      "description": "废弃工业区的秘密正在等待",
+      "level": "level_2",
+      "estimatedTime": 60,
+      "difficulty": "normal",
+      "unlockCondition": "chapter_1_complete"
+    },
+    {
+      "id": "chapter_3",
+      "name": "超凡领域",
+      "description": "进入神秘领域，面对真正的敌人",
+      "level": "level_3",
+      "estimatedTime": 70,
+      "difficulty": "hard",
+      "unlockCondition": "chapter_2_complete"
+    },
+    {
+      "id": "chapter_4",
+      "name": "核心入侵",
+      "description": "量子核心正在崩溃，必须阻止这一切",
+      "level": "level_4",
+      "estimatedTime": 60,
+      "difficulty": "hard",
+      "unlockCondition": "chapter_3_complete"
+    },
+    {
+      "id": "chapter_5",
+      "name": "终末之战",
+      "description": "最终决战，为了墨境的未来",
+      "level": "level_5",
+      "estimatedTime": 65,
+      "difficulty": "nightmare",
+      "unlockCondition": "chapter_4_complete"
+    }
+  ]
+}

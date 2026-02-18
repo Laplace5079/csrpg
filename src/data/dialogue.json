@@ -1,0 +1,147 @@
+{
+  "dialogues": [
+    {
+      "id": "intro_trainer",
+      "nodes": {
+        "start": {
+          "id": "start",
+          "lines": [
+            { "id": "1", "speaker": "训练官 X-1", "text": "欢迎，新兵。我是训练官 X-1，将负责你的入门训练。" },
+            { "id": "2", "speaker": "训练官 X-1", "text": "墨境正在遭受量子裂隙生物的入侵，我们需要每一个战士。" }
+          ],
+          "choices": [
+            { "text": "我准备好了", "nextId": "prepare" },
+            { "text": "告诉我更多关于墨境的事", "nextId": "lore" }
+          ]
+        },
+        "prepare": {
+          "id": "prepare",
+          "lines": [
+            { "id": "1", "speaker": "训练官 X-1", "text": "很好。首先，熟悉你的武器。" },
+            { "id": "2", "speaker": "训练官 X-1", "text": "WASD 移动，空格跳跃，鼠标瞄准，左键射击。" }
+          ],
+          "nextId": "combat_teach"
+        },
+        "lore": {
+          "id": "lore",
+          "lines": [
+            { "id": "1", "speaker": "训练官 X-1", "text": "墨境是我们世界的边缘，一个充满量子能量的神秘区域。" },
+            { "id": "2", "speaker": "训练官 X-1", "text": "裂隙打开了通道，怪物正在涌入。我们必须阻止它们。" }
+          ],
+          "nextId": "prepare"
+        },
+        "combat_teach": {
+          "id": "combat_teach",
+          "lines": [
+            { "id": "1", "speaker": "训练官 X-1", "text": "现在，击败这三个训练机器人来证明你的能力。" }
+          ],
+          "onEnter": "start_combat_training"
+        }
+      },
+      "startNode": "start"
+    },
+    {
+      "id": "chapter_1_intro",
+      "nodes": {
+        "start": {
+          "id": "start",
+          "lines": [
+            { "id": "1", "speaker": "通讯兵", "text": "前哨基地遭到攻击！所有人员立即进入战斗位置！" },
+            { "id": "2", "speaker": "通讯兵", "text": "敌人数量众多，我们需要支援！" }
+          ],
+          "nextId": "objective"
+        },
+        "objective": {
+          "id": "objective",
+          "lines": [
+            { "id": "1", "speaker": "通讯兵", "text": "你的任务是突破敌人防线，到达指挥中心。" },
+            { "id": "2", "speaker": "通讯兵", "text": "小心那些巡逻机器人，它们会呼叫增援。" }
+          ],
+          "onEnter": "start_chapter_1"
+        }
+      },
+      "startNode": "start"
+    },
+    {
+      "id": "chapter_1_boss",
+      "nodes": {
+        "start": {
+          "id": "start",
+          "lines": [
+            { "id": "1", "speaker": "巨型机械臂", "text": "入侵者...检测到..." },
+            { "id": "2", "speaker": "巨型机械臂", "text": "清除程序...启动..." }
+          ],
+          "onEnter": "start_boss_fight"
+        },
+        "phase2": {
+          "id": "phase2",
+          "lines": [
+            { "id": "1", "speaker": "巨型机械臂", "text": "警告...第二阶段...启动..." }
+          ],
+          "onEnter": "boss_phase_2"
+        },
+        "defeated": {
+          "id": "defeated",
+          "lines": [
+            { "id": "1", "speaker": "系统", "text": "敌方 BOSS 已摧毁。" },
+            { "id": "2", "speaker": "通讯兵", "text": "干得好！前哨基地已安全。前往下一个区域。" }
+          ],
+          "onEnter": "chapter_complete"
+        }
+      },
+      "startNode": "start"
+    },
+    {
+      "id": "chapter_2_intro",
+      "nodes": {
+        "start": {
+          "id": "start",
+          "lines": [
+            { "id": "1", "speaker": "神秘声音", "text": "你终于来了..." },
+            { "id": "2", "speaker": "幽灵刺客", "text": "我等你很久了。" }
+          ],
+          "nextId": "reveal"
+        },
+        "reveal": {
+          "id": "reveal",
+          "lines": [
+            { "id": "1", "speaker": "幽灵刺客", "text": "我是来处理你的。这片工业区，将成为你的墓地。" }
+          ],
+          "onEnter": "start_chapter_2"
+        }
+      },
+      "startNode": "start"
+    },
+    {
+      "id": "chapter_3_intro",
+      "nodes": {
+        "start": {
+          "id": "start",
+          "lines": [
+            { "id": "1", "speaker": "虚空吞噬者", "text": "欢迎...来到我的领域..." },
+            { "id": "2", "speaker": "虚空吞噬者", "text": "你是第一个...活着到达这里的人类..." },
+            { "id": "3", "speaker": "虚空吞噬者", "text": "但你不会...活着离开..." }
+          ],
+          "onEnter": "start_chapter_3"
+        }
+      },
+      "startNode": "start"
+    },
+    {
+      "id": "victory",
+      "nodes": {
+        "start": {
+          "id": "start",
+          "lines": [
+            { "id": "1", "speaker": "系统", "text": "警告：量子核心正在稳定。" },
+            { "id": "2", "speaker": "系统", "text": "裂隙正在关闭。" },
+            { "id": "3", "speaker": "指挥官", "text": "你做到了！墨境得救了。" },
+            { "id": "4", "speaker": "指挥官", "text": "你是真正的英雄。" }
+          ],
+          "onEnter": "show_victory"
+        }
+      },
+      "startNode": "start"
+    }
+  ]
+}

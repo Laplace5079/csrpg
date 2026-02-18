@@ -1,102 +1,18 @@
 /**
- * AI System - 主入口
- * 导出所有AI系统模块
+ * systems/ai/index.ts - AI 系统导出
+ * 墨境：孤军 (Ink Realm: Lone Army)
  */
 
-// 核心
-export { AICharacter, AICharacterType, AIState } from './AICharacter';
-export { 
-  BehaviorTree, 
-  NodeType, 
-  NodeStatus,
-  BTContext,
-  BTSequence,
-  BTSelector,
-  BTCondition,
-  BTAction,
-  BTDecorator,
-  DecoratorType,
-  createEnemyBehaviorTree,
-} from './BehaviorTree';
+export { AIManager } from './AIManager';
+export { PerceptionSystem } from './Perception';
+export type { PerceptionResult, PerceptionConfig } from './Perception';
 
-// 敌人
-export { Grunt } from './Enemy/Grunt';
-export { Soldier } from './Enemy/Soldier';
+export { CoverSystem } from './CoverSystem';
+export type { CoverSpot, CoverState, CoverType } from './CoverSystem';
 
-// Boss
-export { BossBase, BossPhaseConfig, BossConfig, BossEvents } from './Boss/BossBase';
-export { Trainer } from './Boss/Trainer';
+export { BehaviorTree } from './BehaviorTree';
+export { AICharacter } from './AICharacter';
+export type { AIConfig } from './AICharacter';
 
-// ============== 快速工厂函数 ==============
-
-import * as THREE from 'three';
-import { Grunt } from './Enemy/Grunt';
-import { Soldier } from './Enemy/Soldier';
-import { Trainer } from './Boss/Trainer';
-import { AICharacterType, AIConfig } from './AICharacter';
-
-/**
- * 根据类型创建AI角色
- */
-export function createAICharacter(
-  type: AICharacterType, 
-  id: string, 
-  position?: THREE.Vector3,
-  options?: Partial<AIConfig>
-): Grunt | Soldier | null {
-  switch (type) {
-    case AICharacterType.GRUNT:
-      return Grunt.create(position);
-    case AICharacterType.SOLDIER:
-      return Soldier.create(position);
-    default:
-      console.warn(`Unknown AI type: ${type}`);
-      return null;
-  }
-}
-
-/**
- * 创建Boss
- */
-export function createBoss(
-  type: string,
-  id: string,
-  position?: THREE.Vector3
-): Trainer | null {
-  switch (type) {
-    case 'trainer':
-      return Trainer.create(position);
-    default:
-      console.warn(`Unknown boss type: ${type}`);
-      return null;
-  }
-}
-
-/**
- * 创建一组敌人
- */
-export function createEnemyWave(
-  types: Array<{ type: AICharacterType; count: number }>,
-  centerPosition: THREE.Vector3,
-  spread: number = 10
-): Array<Grunt | Soldier> {
-  const enemies: Array<Grunt | Soldier> = [];
-  
-  for (const { type, count } of types) {
-    for (let i = 0; i < count; i++) {
-      const offset = new THREE.Vector3(
-        (Math.random() - 0.5) * spread * 2,
-        0,
-        (Math.random() - 0.5) * spread * 2
-      );
-      const position = centerPosition.clone().add(offset);
-      
-      const enemy = createAICharacter(type, `${type}_${i}`, position);
-      if (enemy) {
-        enemies.push(enemy);
-      }
-    }
-  }
-  
-  return enemies;
-}
+// Re-export enemy types
+export { EnemyType, AIState } from '../../core/constants';

@@ -1,0 +1,194 @@
+{
+  "quests": [
+    {
+      "id": "quest_training",
+      "name": "基础训练",
+      "description": "击败 3 个训练机器人来证明你的能力",
+      "giver": "训练官 X-1",
+      "objectives": [
+        {
+          "id": "obj_1",
+          "description": "击败训练机器人",
+          "type": "eliminate",
+          "target": "grunt_robot",
+          "requiredCount": 3,
+          "isOptional": false
+        }
+      ],
+      "rewards": {
+        "experience": 100,
+        "currency": 50
+      },
+      "nextQuest": "quest_chapter_1"
+    },
+    {
+      "id": "quest_chapter_1",
+      "name": "突破防线",
+      "description": "穿越前哨基地的敌人防线，到达指挥中心",
+      "giver": "通讯兵",
+      "objectives": [
+        {
+          "id": "obj_1",
+          "description": "击败敌人",
+          "type": "eliminate",
+          "target": "grunt_robot",
+          "requiredCount": 5,
+          "isOptional": false
+        },
+        {
+          "id": "obj_2",
+          "description": "到达指挥中心",
+          "type": "reach",
+          "target": "command_center",
+          "requiredCount": 1,
+          "isOptional": false
+        }
+      ],
+      "rewards": {
+        "experience": 150,
+        "currency": 100
+      },
+      "nextQuest": "quest_chapter_1_boss"
+    },
+    {
+      "id": "quest_chapter_1_boss",
+      "name": "摧毁巨型机械臂",
+      "description": "击败守护前哨基地的巨型机械臂 BOSS",
+      "giver": "通讯兵",
+      "objectives": [
+        {
+          "id": "obj_1",
+          "description": "击败巨型机械臂",
+          "type": "eliminate",
+          "target": "boss_mech_arm",
+          "requiredCount": 1,
+          "isOptional": false
+        }
+      ],
+      "rewards": {
+        "experience": 300,
+        "currency": 200,
+        "items": ["quantum_blade"]
+      },
+      "nextQuest": "quest_chapter_2"
+    },
+    {
+      "id": "quest_chapter_2",
+      "name": "调查工业区",
+      "description": "探索废弃工业区，找出敌人的阴谋",
+      "giver": "神秘声音",
+      "objectives": [
+        {
+          "id": "obj_1",
+          "description": "探索工业区",
+          "type": "reach",
+          "target": "factory_entry",
+          "requiredCount": 1,
+          "isOptional": false
+        },
+        {
+          "id": "obj_2",
+          "description": "击败战术士兵",
+          "type": "eliminate",
+          "target": "soldier_tactical",
+          "requiredCount": 8,
+          "isOptional": false
+        },
+        {
+          "id": "obj_3",
+          "description": "找到控制室",
+          "type": "reach",
+          "target": "control_room",
+          "requiredCount": 1,
+          "isOptional": false
+        }
+      ],
+      "rewards": {
+        "experience": 250,
+        "currency": 150
+      },
+      "nextQuest": "quest_chapter_2_boss"
+    },
+    {
+      "id": "quest_chapter_2_boss",
+      "name": "击败幽灵刺客",
+      "description": "在工业区深处击败幽灵刺客",
+      "giver": "通讯兵",
+      "objectives": [
+        {
+          "id": "obj_1",
+          "description": "击败幽灵刺客",
+          "type": "eliminate",
+          "target": "boss_ghost_assassin",
+          "requiredCount": 1,
+          "isOptional": false
+        }
+      ],
+      "rewards": {
+        "experience": 400,
+        "currency": 300,
+        "items": ["shadow_cloak"]
+      },
+      "nextQuest": "quest_chapter_3"
+    },
+    {
+      "id": "quest_chapter_3",
+      "name": "进入超凡领域",
+      "description": "穿过传送门，进入敌人核心领域",
+      "giver": "指挥官",
+      "objectives": [
+        {
+          "id": "obj_1",
+          "description": "穿过传送门",
+          "type": "reach",
+          "target": "portal",
+          "requiredCount": 1,
+          "isOptional": false
+        },
+        {
+          "id": "obj_2",
+          "description": "收集能量碎片",
+          "type": "collect",
+          "target": "energy_shard",
+          "requiredCount": 3,
+          "isOptional": false
+        },
+        {
+          "id": "obj_3",
+          "description": "击败幻影精英",
+          "type": "eliminate",
+          "target": "elite_phantom",
+          "requiredCount": 5,
+          "isOptional": false
+        }
+      ],
+      "rewards": {
+        "experience": 350,
+        "currency": 250
+      },
+      "nextQuest": "quest_chapter_3_boss"
+    },
+    {
+      "id": "quest_chapter_3_boss",
+      "name": "对决虚空吞噬者",
+      "description": "面对最终 BOSS，拯救墨境",
+      "giver": "指挥官",
+      "objectives": [
+        {
+          "id": "obj_1",
+          "description": "击败虚空吞噬者",
+          "type": "eliminate",
+          "target": "boss_void_eater",
+          "requiredCount": 1,
+          "isOptional": false
+        }
+      ],
+      "rewards": {
+        "experience": 1000,
+        "currency": 1000,
+        "items": ["void_essence", "legendary_weapon"]
+      },
+      "nextQuest": null
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
-  "name": "cs-rpg",
+  "name": "ink-realm-lone-army",
   "version": "1.0.0",
-  "description": "CS:RPG - Quantum Breach",
+  "description": "墨境：孤军 - Ink Realm: Lone Army - A WebGL FPS RPG Game",
   "type": "module",
   "engines": {
     "node": ">=18.0.0"
