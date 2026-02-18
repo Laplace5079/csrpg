@@ -10,12 +10,14 @@ import {
   Camera,
   PhysicsWorld,
   TouchControls,
-  MobileHUD,
   detectDevice,
   createHUDContainer,
   injectHUDStyles,
   MOBILE_HUD_THEME,
-} from '../src/index';
+} from '../index';
+
+// MobileHUD is React component, lazy load
+let MobileHUD: any;
 
 // ============================================
 // 示例1: 基础渲染器初始化
