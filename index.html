@@ -12,11 +12,17 @@
       font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
     }
-    #app { width: 100vw; height: 100vh; }
+    #game-container { 
+      width: 100vw; 
+      height: 100vh; 
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
   </style>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="game-container"></div>
   <script type="module" src="/src/examples/index.ts"></script>
 </body>
 </html>
